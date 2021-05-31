@@ -19,7 +19,7 @@ const moveDisk = (disk, tower) => {
     } else {
         // se espaco de cima estiver vazio, adiciona selectedDisk nele, aplica uns estilos e vira a variavel de checagem pra true
         disk.style.cssText = 
-        "position: absolute; top: 50%; right: 50%; transform: translate(50%, -50%)";
+        "margin: 0; position: absolute; top: 50%; right: 50%; transform: translate(50%, -50%)";
         topSpace.append(disk);
         topSpaceFilled = true;
     };
@@ -27,8 +27,8 @@ const moveDisk = (disk, tower) => {
 
 
 // to do: 
-// dar um jeito nas margens
 // comparar tamanhos
-// entro outros...
+// contar movimentos
+// entre outros...
 
 
