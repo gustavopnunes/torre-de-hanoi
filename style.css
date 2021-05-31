@@ -19,6 +19,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     max-width: 800px;
+    border: 1px solid white;
 }
 
 .top-space {
@@ -26,13 +27,8 @@ body {
     height: 20%;
     margin: 0 auto;   
     display: flex;
-    justify-content: center;
-    align-items: center;
     border: 1px solid wheat;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .towers {
@@ -46,6 +42,12 @@ body {
 }
 
 .tower {
+    text-align: justify;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    display: flex;
+    text-align: center;
     width: 30%;
     height: 100%;
     border-bottom: 4px solid black;
@@ -55,8 +57,7 @@ body {
 
 .tower::before {
     content: "";
-    height: 60%;
-    width: 100px;
+    height: 160px;
     border-left: 4px solid black;
     position: absolute;
     bottom: 0;
@@ -64,9 +65,8 @@ body {
 }
 
 .disk {
+    margin-right: 50%;
     height: 36px;
-    position: absolute;
-    right: 50%;
     transform: translate(50%);
     border-radius: 5px;
 }
@@ -74,23 +74,19 @@ body {
 .disk4 {
     width: 80%;
     background-color: aqua;
-    bottom: 0;
 }
 
 .disk3 {
     background-color: rgb(255, 130, 47);
     width: 60%;
-    bottom: 36px;
 }
 
 .disk2 {
     background-color: red;
     width: 40%;
-    bottom: 72px;
 }
 
 .disk1 {
     background-color: yellow;
     width: 20%;
-    bottom: 108px;
 }
