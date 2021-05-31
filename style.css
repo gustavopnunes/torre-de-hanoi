@@ -5,10 +5,11 @@ html, body, div {
 }
 
 body {
-    background-color: blueviolet;
+    background-color: rgb(116, 116, 116);
     height: 100vh;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .container {
@@ -30,7 +31,6 @@ body {
     justify-content: center;
     align-items: center;
     border: 1px solid wheat;
-    position: relative;
 }
 
 .towers {
@@ -39,7 +39,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    position: relative;
     border: 1px solid rgb(221, 221, 221)
 }
 
@@ -57,17 +56,18 @@ body {
 
 .tower::before {
     content: "";
-    height: 160px;
+    height: 112px;
     border-left: 4px solid black;
     position: absolute;
     bottom: 0;
     left: 50%;
+    transform: translate(-50%);
 }
 
 .disk {
     margin-right: 50%;
-    height: 36px;
     transform: translate(50%);
+    height: 24px;
     border-radius: 5px;
 }
 
@@ -89,4 +89,14 @@ body {
 .disk4 {
     width: 80%;
     background-color: aqua;
+}
+
+@media (min-width: 720px) {
+    .disk {
+        height: 32px;
+    }
+
+    .tower::before {
+        height: 152px;
+    }
 }
