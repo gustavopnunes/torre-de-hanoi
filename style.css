@@ -22,7 +22,7 @@ body {
     
 }
 
-.empty-space {
+.top-space {
     width: 30%;
     height: 20%;
     margin: 0 auto;   
@@ -30,12 +30,10 @@ body {
     justify-content: center;
     align-items: center;
     border: 1px solid wheat;
-}
-
-.empty-space__selected-disk {
-    width: 90%;
-    height: 90%;
-    border: 2px solid white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .towers {
@@ -58,7 +56,7 @@ body {
 
 .tower::before {
     content: "";
-    height: 50%;
+    height: 60%;
     width: 100px;
     border-left: 4px solid black;
     position: absolute;
@@ -67,33 +65,33 @@ body {
 }
 
 .disk {
-    height: 10%;
+    height: 36px;
     position: absolute;
     right: 50%;
     transform: translate(50%);
     border-radius: 5px;
 }
 
-.disk1 {
+.disk4 {
     width: 80%;
     background-color: aqua;
     bottom: 0;
 }
 
-.disk2 {
+.disk3 {
     background-color: rgb(255, 130, 47);
     width: 60%;
-    bottom: 10%;
+    bottom: 36px;
 }
 
-.disk3 {
+.disk2 {
     background-color: red;
     width: 40%;
-    bottom: 20%;
+    bottom: 72px;
 }
 
-.disk4 {
+.disk1 {
     background-color: yellow;
     width: 20%;
-    bottom: 30%;
+    bottom: 108px;
 }
