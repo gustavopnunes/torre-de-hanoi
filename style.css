@@ -6,6 +6,9 @@ html, body, div {
 
 body {
     background-color: blueviolet;
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .container {
@@ -15,7 +18,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+    max-width: 1200px;
+    
 }
 
 .empty-space {
