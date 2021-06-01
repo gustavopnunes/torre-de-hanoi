@@ -7,7 +7,7 @@ html, body, div {
 body {
     font-family: monospace;
     font-size: 1rem;
-    background-color: rgb(116, 116, 116);
+    background-color: rgb(158, 158, 158);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -40,7 +40,6 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid wheat; */
 }
 
 .reset-btn {
@@ -49,7 +48,6 @@ p {
     margin: 8px;
     height: 3rem;
     width: 7.5rem;
-    /* font-weight: bold; */
     border-radius: 3px;
     background-color: rgb(26, 26, 26);
     color: snow;
@@ -61,7 +59,6 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    /* border: 1px solid rgb(221, 221, 221) */
 }
 
 .tower {
