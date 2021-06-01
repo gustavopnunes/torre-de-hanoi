@@ -20,7 +20,6 @@ const criaGameDesign = () => {
         const createDisk = document.createElement('div');
         const towerLeft = document.querySelector('.left-tower');
         createDisk.classList.add("disk", `disk${i}`);
-        // createDisk.classList.add(`disk${i}`);
         towerLeft.appendChild(createDisk);
     }
 }
@@ -98,3 +97,6 @@ resetBtn.addEventListener('click', () => {
 
 
 
+// to do
+// arrumar posicoes
+// modal vitoria

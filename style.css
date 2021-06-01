@@ -5,6 +5,8 @@ html, body, div {
 }
 
 body {
+    font-family: monospace;
+    font-size: 1rem;
     background-color: rgb(116, 116, 116);
     height: 100vh;
     display: flex;
@@ -17,16 +19,18 @@ body {
 p {
     display: block;
     text-align: center;
+    text-transform: uppercase;
 }
 .container {
     width: 90vw;
-    height:50vh;
+    height:70vh;
     margin: 4px auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     max-width: 800px;
-    border: 1px solid white;
+    /* border: 1px solid white; */
 }
 
 .top-space {
@@ -36,7 +40,19 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid wheat;
+    /* border: 1px solid wheat; */
+}
+
+.reset-btn {
+    text-transform: uppercase;
+    border: none;
+    margin: 8px;
+    height: 3rem;
+    width: 7.5rem;
+    /* font-weight: bold; */
+    border-radius: 3px;
+    background-color: rgb(26, 26, 26);
+    color: snow;
 }
 
 .towers {
@@ -45,7 +61,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    border: 1px solid rgb(221, 221, 221)
+    /* border: 1px solid rgb(221, 221, 221) */
 }
 
 .tower {
