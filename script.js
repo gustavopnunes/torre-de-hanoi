@@ -59,6 +59,9 @@ const moveDisk = (tower, disk) => {
         moveCount.textContent++; // aumenta contador +1;
         //return;
     } else {
+        if (disk === null){
+            return;
+        }
     // se espaco estiver vazio, joga o primeiro disco da torre clicada nele
     topSpace.append(disk);
     topSpaceFilled = true;
