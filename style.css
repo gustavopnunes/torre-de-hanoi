@@ -12,6 +12,10 @@ body {
     overflow: hidden;
 }
 
+p {
+    display: block;
+    text-align: center;
+}
 .container {
     width: 90vw;
     height:50vh;
