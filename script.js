@@ -76,12 +76,23 @@ const validateMove = (top, fit) => { // verifica os tamanhos e retorna falso par
     }
     return top.clientWidth > fit.clientWidth;
 }
+//Aplicar o modal da vitoria
+const weAreTheChampions = () => {
+    const showModal = document.querySelector('.victory-modal');
+    const showTime = document.querySelector('#finish-time');
+    const showMoves = document.querySelector('#finish-moves');
+    let getTime = timer.textContent;
+    let getMoves = moveCount.textContent;
+    showTime.textContent = getTime;
+    showMoves.textContent = getMoves;
+    showModal.classList.remove('--hidden');
 
+}
 // Verificador de vitória
 const verifyVictory = () => {
     const lastTower = document.querySelector('.right-tower');
     if (lastTower.childElementCount === 4){
-        console.log('Vitória');
+        weAreTheChampions();
         window.clearInterval(startingTimer);
     }
 }

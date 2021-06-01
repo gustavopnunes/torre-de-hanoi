@@ -8,6 +8,13 @@
     <title>Tower of Hanoi</title>
 </head>
 <body>
+    <div class="victory-modal --hidden">
+        <h1>Parabéns!</h1>
+        <p>Você terminou a torre de Hanoi!</p>
+        <p>Levou: <span id="finish-time"></span> segundos.</p>
+        <p>E <span id="finish-moves"></span> movimentos.</p>
+        <p>É interessante observar que o número mínimo de "movimentos" para conseguir transferir todos os discos da primeira estaca à terceira é 2n-1, sendo n o número de discos. Logo: para solucionar um Hanói de 4 discos, são necessários no mínimo 15 movimentos! </p>
+    </div>
     <button>Reset</button>
     <p>Tempo: <span class="timer">0</span> segundos</p>
     <div class="container">
