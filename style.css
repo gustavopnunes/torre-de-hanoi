@@ -8,10 +8,16 @@ body {
     background-color: rgb(116, 116, 116);
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
+p {
+    display: block;
+    text-align: center;
+}
 .container {
     width: 90vw;
     height:50vh;
@@ -44,7 +50,7 @@ body {
 
 .tower {
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: center;
     flex-direction: column;
     display: flex;
     width: 30%;
@@ -65,8 +71,7 @@ body {
 }
 
 .disk {
-    margin-right: 50%;
-    transform: translate(50%);
+    z-index: 100;
     height: 24px;
     border-radius: 5px;
 }
