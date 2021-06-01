@@ -2,6 +2,8 @@ let topSpace = document.querySelector(".top-space");
 const moveCount = document.querySelector('#moves');
 const resetBtn = document.querySelector('button');
 const timer = document.querySelector('.timer');
+const showModal = document.querySelector('.victory-modal');
+const retryOnModal = document.querySelector('#retry');
 let topSpaceFilled = false; // variavel de checagem do espaço de cima, inicia em false (espaco vazio)
 let itsStarting = true; // variavel checagem inicio timer
 let selectedDisk = undefined;
@@ -74,13 +76,25 @@ const validateMove = (top, fit) => { // verifica os tamanhos e retorna falso par
         return false;
     };
     return top.clientWidth > fit.clientWidth;
+}
+//Aplicar o modal da vitoria
+const weAreTheChampions = () => {
+    
+    const showTime = document.querySelector('#finish-time');
+    const showMoves = document.querySelector('#finish-moves');
+    let getTime = timer.textContent;
+    let getMoves = moveCount.textContent;
+    showTime.textContent = getTime;
+    showMoves.textContent = getMoves;
+    showModal.classList.remove('--hidden');
 };
+
 
 // Verificador de vitória
 const verifyVictory = () => {
     const lastTower = document.querySelector('.right-tower');
     if (lastTower.childElementCount === 4){
-        console.log('Vitória');
+        weAreTheChampions();
         window.clearInterval(startingTimer);
     };
 };
@@ -93,10 +107,14 @@ const resetAll = () => {
     topSpaceFilled = false;
     itsStarting = true;
     document.querySelector('.left-tower').append(disks[0], disks[1], disks[2], disks[3]);
+    showModal.classList.add('--hidden');
 };
 resetBtn.addEventListener('click', () => {
     resetAll();
 });
 
+retryOnModal.addEventListener('click', () => {
+    resetAll();
+})
 // to do
 // modal vitoria
