@@ -3,7 +3,7 @@ const moveCount = document.querySelector('#moves');
 const resetBtn = document.querySelector('button');
 const timer = document.querySelector('.timer');
 let topSpaceFilled = false; //variavel de checagem do espaço de cima, inicia em false (espaco vazio)
-let itsStarting = true;
+let itsStarting = true; // variavel checagem inicio timer
 let selectedDisk = undefined;
 
 // adiciona listener pra cada torre
@@ -34,17 +34,15 @@ const moveDisk = (tower, disk) => {
         tower.prepend(disk);  //o "prepend" joga o disco certinho em cima do outro. Com appendChild o disco estava entrando por baixo
         topSpaceFilled = false;
         moveCount.textContent++; // aumenta contador +1;
-        return;
-    
-    }
-
+        //return;
+    } else {
     // se espaco estiver vazio, joga o primeiro disco da torre clicada nele
     topSpace.append(disk);
     topSpaceFilled = true;
-    
+    }
+    verifyVictory();
 }
 
-// to do: 
 // comparar tamanhos
 const validateMove = (top, fit) => { //verifica os tamanhos e retorna falso para não entrar no if, se for true o if encerra ação
     if (fit == null){
@@ -52,8 +50,16 @@ const validateMove = (top, fit) => { //verifica os tamanhos e retorna falso para
     }
     return top.clientWidth > fit.clientWidth;
 }
-// contar movimentos
-// entre outros...
+// Verificador de vitória
+const verifyVictory = () => {
+    const lastTower = document.querySelector('.right-tower');
+    if (lastTower.childElementCount === 4){
+        console.log('Vitória');
+        window.clearInterval(startingTimer);
+    }
+
+}
+//Reset
 const resetAll = () => {
     moveCount.textContent = 0;
     timer.textContent = 0;
