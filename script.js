@@ -39,6 +39,7 @@ document.querySelectorAll(".tower").forEach(item => {
     });
     
 });
+
 const timerCount = () => {
     timer.textContent++;
 };
@@ -49,7 +50,6 @@ const moveDisk = (tower, disk) => {
         startingTimer = window.setInterval(timerCount, 1000); // tem que ser global pra zerar no reset!!!
         itsStarting = false;
     };
-    
     if(topSpaceFilled) {  
         disk = topSpace.lastChild;
         if (validateMove(disk, selectedDisk)) {
@@ -76,10 +76,10 @@ const validateMove = (top, fit) => { // verifica os tamanhos e retorna falso par
         return false;
     };
     return top.clientWidth > fit.clientWidth;
-}
+};
+
 //Aplicar o modal da vitoria
 const weAreTheChampions = () => {
-    
     const showTime = document.querySelector('#finish-time');
     const showMoves = document.querySelector('#finish-moves');
     let getTime = timer.textContent;
@@ -88,7 +88,6 @@ const weAreTheChampions = () => {
     showMoves.textContent = getMoves;
     showModal.classList.remove('--hidden');
 };
-
 
 // Verificador de vitória
 const verifyVictory = () => {
@@ -115,6 +114,4 @@ resetBtn.addEventListener('click', () => {
 
 retryOnModal.addEventListener('click', () => {
     resetAll();
-})
-// to do
-// modal vitoria
+});
