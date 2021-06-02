@@ -19,7 +19,7 @@ inputDisksQuant.addEventListener('mousemove', letBeEquals);
 
 
 // Criar as torres e discos usando DOM: precisa ficar no topo para os events serem aplicados nos itens criados;
-const criaGameDesign = () => {
+const criaGameDesign = (quant) => {
     const towersClass = {0: 'left-tower', 1: 'middle-tower', 2: 'right-tower'};
     
     for (let i = 0; i < 3; i++) {
@@ -28,7 +28,7 @@ const criaGameDesign = () => {
         createTower.classList.add(towersClass[i]);
         towersContainers.appendChild(createTower);
     };
-    for (let i = 1; i < 5; i++){
+    for (let i = 1; i <= quant; i++){
         const createDisk = document.createElement('div');
         const towerLeft = document.querySelector('.left-tower');
         createDisk.classList.add("disk", `disk${i}`);

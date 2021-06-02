@@ -18,10 +18,6 @@ const letBeEquals = () => {
     valueShown.textContent = inputDisksQuant.value;
 }
 
-
-
-
-// ----Área de teste
 const diskColors = {1: 'aqua', 2: 'rgb(255, 130, 47)', 3: 'red', 4: 'yellow', 5: 'violet', 6: 'darkgreen', 7: 'saddlebrown'}
 const getDisksInput = () => {
     return inputDisksQuant.value;
@@ -70,7 +66,6 @@ const verifyVictory = () => {
     let disksOnGame = getDisksInput();
     const lastTower = document.querySelector('.right-tower');
     if (lastTower.childElementCount === Number(disksOnGame)){
-        console.log('2')
         weAreTheChampions();
         window.clearInterval(startingTimer);
     };
@@ -122,7 +117,7 @@ const gameMaking = () => {
     createEvents();
 }
 gameMaking();
-// ---fim área de testes
+
 
 
 
