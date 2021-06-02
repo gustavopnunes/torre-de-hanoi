@@ -6,6 +6,8 @@ const showModal = document.querySelector('.victory-modal');
 const retryOnModal = document.querySelector('#retry');
 const inputDisksQuant = document.querySelector('#disks-quant');
 const towersContainers = document.querySelector('.towers');
+const range = document.querySelector('.range-disks');
+const stats = document.querySelector('.estatisticas');
 let topSpaceFilled = false; // variavel de checagem do espaço de cima, inicia em false (espaco vazio)
 let itsStarting = true; // variavel checagem inicio timer
 let selectedDisk = undefined;
@@ -79,6 +81,8 @@ const moveDisk = (tower, disk) => {
     if (itsStarting){
         startingTimer = window.setInterval(timerCount, 1000); // tem que ser global pra zerar no reset!!!
         itsStarting = false;
+        range.classList.add('--hidden');
+        stats.classList.remove('--hidden');
     };
     
     if(topSpaceFilled) {  
@@ -131,6 +135,8 @@ const resetAll = () => {
     itsStarting = true;
     letBeEquals();
     gameMaking();
+    range.classList.remove('--hidden');
+    stats.classList.add('--hidden');
     showModal.classList.add('--hidden');
 };
 resetBtn.addEventListener('click', () => {
