@@ -56,6 +56,14 @@ p {
     cursor: pointer;
     color: yellow;
 }
+.range-disks {
+    transform: rotate(270deg);
+    display: flex;
+    align-items: center;
+    max-width: 30%;
+    min-height: 100px;
+    
+}
 
 .container {
     width: 90vw;
@@ -68,6 +76,12 @@ p {
     max-width: 800px;
     max-height: 400px;
 }
+.columns {
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+}
+
 
 .top-space {
     border: 1px solid transparent;
@@ -143,6 +157,7 @@ p {
 .disk3 {
     background-color: rgb(255, 130, 47);
     width: 60%;
+    
 }
 
 .disk4 {
