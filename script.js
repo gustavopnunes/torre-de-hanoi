@@ -112,6 +112,7 @@ const createEvents = () => {
 }
 const gameMaking = () => {
     towersContainers.innerHTML = '';
+    topSpace.innerHTML = ''
     createTowers();
     createDisks(getDisksInput());
     createEvents();
