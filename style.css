@@ -57,11 +57,9 @@ p {
     color: yellow;
 }
 .range-disks {
-    transform: rotate(270deg);
-    display: flex;
+    display: grid;
+    align-content: center;
     align-items: center;
-    max-width: 30%;
-    min-height: 100px;
     
 }
 
@@ -78,11 +76,27 @@ p {
 }
 .columns {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     min-width: 100%;
 }
 
-
+#disks-quant {
+    border-radius: 15%;
+    background: #111;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
+    cursor: pointer;
+    width: 70%;
+    transform-origin: 35% 35%;
+    transform: rotate(-90deg);
+}
+#disks-quant:-webkit-slider-thumb{
+    border-radius: 30%;
+    cursor: pointer;
+}
+#disks-quant::-moz-range-thumb{
+    border-radius: 30%;
+    cursor: pointer;
+}
 .top-space {
     border: 1px solid transparent;
     width: 30%;
