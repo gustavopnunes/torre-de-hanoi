@@ -138,6 +138,8 @@ resetBtn.addEventListener('click', () => {
 });
 
 retryOnModal.addEventListener('click', () => {
+    inputDisksQuant.value++;
+    letBeEquals();
     resetAll();
 })
 inputDisksQuant.addEventListener('change', () => {
