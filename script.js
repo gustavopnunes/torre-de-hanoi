@@ -41,7 +41,7 @@ const createDisks = (numDisks) => {
         const basicHeight = 35;
         createDisk.classList.add('disk');
         createDisk.style.cssText = `background-color: ${diskColors[i]};
-                                    height: ${basicHeight-numDisks*2}px;
+                                    height: ${basicHeight-numDisks*2.7}px;
                                     width: ${90-i*10}%;`
         getInitTower.appendChild(createDisk);
     }
