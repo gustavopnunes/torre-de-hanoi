@@ -6,15 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
     <title>Tower of Hanoi</title>
 </head>
 <body>
     <div class="victory-modal --hidden">
+        <div class="before"></div>
+        <div class="after"></div>
         <h1>Parabéns!</h1>
         <p>Você terminou a torre de Hanoi!</p>
-        <p>Levou: <span id="finish-time"></span> segundos.</p>
-        <p>E <span id="finish-moves"></span> movimentos.</p>
-        <p>É interessante observar que o número mínimo de "movimentos" para conseguir transferir todos os discos da primeira estaca à terceira é 2n-1, sendo n o número de discos. Logo: para solucionar um Hanói de 4 discos, são necessários no mínimo 15 movimentos! </p>
+        <p>Estatísticas:</p>
+        <p> <span id="finish-time"></span> segundos</p>
+        <p><span id="finish-moves"></span> movimentos</p>
+        <p class = "try-again">Tente novamente com uma quantidade maior de discos!</p>
         <p id="retry"><i class="fas fa-sync"></i>  Tentar Novamente</p>
     </div>
     
