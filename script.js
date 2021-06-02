@@ -8,24 +8,35 @@ const inputDisksQuant = document.querySelector('#disks-quant');
 const towersContainers = document.querySelector('.towers');
 const range = document.querySelector('.range-disks');
 const stats = document.querySelector('.estatisticas');
+const instrucoes = document.querySelector(".instrucoes-btn");
+const fecharBtn = document.querySelector(".fechar-btn");
 let topSpaceFilled = false; // variavel de checagem do espaço de cima, inicia em false (espaco vazio)
 let itsStarting = true; // variavel checagem inicio timer
 let selectedDisk = undefined;
+
+const displayInstructions = () => {
+    let modal = document.querySelector(".instrucoes");
+    if (modal.classList.contains("--hidden")) {
+        modal.classList.remove("--hidden");
+    } else {
+        modal.classList.add("--hidden");
+    }
+};
+
+instrucoes.addEventListener("click", displayInstructions);
+fecharBtn.addEventListener("click", displayInstructions);
 
 // Ajuste do input range para mostrar sempre o número selecionado
 const letBeEquals = () => {
     const valueShown = document.querySelector('#range-show');
     valueShown.textContent = inputDisksQuant.value;
-}
+};
 
-
-
-
-// ----Área de teste
 const diskColors = {1: 'aqua', 2: 'rgb(255, 130, 47)', 3: 'red', 4: 'yellow', 5: 'violet', 6: 'darkgreen', 7: 'saddlebrown'}
 const getDisksInput = () => {
     return inputDisksQuant.value;
-}
+};
+
 const createTowers = () => {
     const towersClass = {0: 'left-tower', 1: 'middle-tower', 2: 'right-tower'};
     
@@ -35,7 +46,8 @@ const createTowers = () => {
         createTower.classList.add(towersClass[i]);
         towersContainers.appendChild(createTower);
     };
-}
+};
+
 const createDisks = (numDisks) => {
     const getInitTower = document.querySelector('.left-tower');
     for (let i = numDisks; i > 0; i--){
@@ -46,8 +58,9 @@ const createDisks = (numDisks) => {
                                     height: ${basicHeight-numDisks*2.7}px;
                                     width: ${90-i*10}%;`
         getInitTower.appendChild(createDisk);
-    }
-}
+    };
+};
+
 const timerCount = () => {
     timer.textContent++;
 };
@@ -56,7 +69,8 @@ const validateMove = (top, fit) => { // verifica os tamanhos e retorna falso par
         return false;
     };
     return top.clientWidth > fit.clientWidth;
-}
+};
+
 const weAreTheChampions = () => {
     const showTime = document.querySelector('#finish-time');
     const showMoves = document.querySelector('#finish-moves');
@@ -66,15 +80,16 @@ const weAreTheChampions = () => {
     showMoves.textContent = getMoves;
     showModal.classList.remove('--hidden');
 };
+
 const verifyVictory = () => {
     let disksOnGame = getDisksInput();
     const lastTower = document.querySelector('.right-tower');
     if (lastTower.childElementCount === Number(disksOnGame)){
-        console.log('2')
         weAreTheChampions();
         window.clearInterval(startingTimer);
     };
 };
+
 const moveDisk = (tower, disk) => {
     
     // checa se o espaco de cima ja esta ocupado, se estiver tira o disco dele, joga pra torre clicada e vira a variavel de checagem
@@ -104,6 +119,7 @@ const moveDisk = (tower, disk) => {
     };
     verifyVictory();
 };
+
 const createEvents = () => {
     document.querySelectorAll(".tower").forEach(item => {
     item.addEventListener("click", () => {
@@ -113,7 +129,8 @@ const createEvents = () => {
     });
     
 });
-}
+};
+
 const gameMaking = () => {
     towersContainers.innerHTML = '';
     topSpace.innerHTML = ''
@@ -122,10 +139,6 @@ const gameMaking = () => {
     createEvents();
 }
 gameMaking();
-// ---fim área de testes
-
-
-
 
 const resetAll = () => {
     moveCount.textContent = 0;
@@ -139,6 +152,7 @@ const resetAll = () => {
     stats.classList.add('--hidden');
     showModal.classList.add('--hidden');
 };
+
 resetBtn.addEventListener('click', () => {
     resetAll();
 });
@@ -147,7 +161,8 @@ retryOnModal.addEventListener('click', () => {
     inputDisksQuant.value++;
     letBeEquals();
     resetAll();
-})
+});
+
 inputDisksQuant.addEventListener('change', () => {
     moveCount.textContent = 0;
     topSpaceFilled = false;
@@ -157,4 +172,5 @@ inputDisksQuant.addEventListener('change', () => {
     window.clearInterval(startingTimer);
     timer.textContent = 0;
 });
+
 inputDisksQuant.addEventListener('mousemove', letBeEquals);

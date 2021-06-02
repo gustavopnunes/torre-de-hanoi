@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,11 +21,11 @@
         <p class = "try-again">Tente novamente com uma quantidade maior de discos!</p>
         <p id="retry"><i class="fas fa-sync"></i>  Tentar Novamente</p>
     </div>
-    
     <div class="container">
+        <h1 class="title">TORRE DE HANOI</h1>
         <div class="columns">
             <div class="range-disks">
-                <p>Escolha o número de discos:</p>
+                <p>Escolha o número de discos e clique neles para começar:</p>
                 <label id="range-show">3</label>
                 <input type="range" name="Numero-discos" id="disks-quant" class = "test" min="3" max="7" value="3">
             </div>
@@ -36,8 +36,18 @@
             </div>
         </div>
         <div class="top-space"></div>
-        
         <div class="towers"></div>
+    </div>
+    <a href="#" class="instrucoes-btn">Instruções</a>
+    <div class="instrucoes --hidden">
+        <a href="#">Instruções</a>
+        <ol>
+            <li>Deslize a barra para selecionar a quantidade de discos;</li>
+            <li>Clique na torre que irá retirar o disco, o último disco irá subir; </li>
+            <li>Clique na torre que irá receber o disco (só irá encaixar se for menor que o último disco da torre);</li>
+            <li>Repita o segundo e terceiro passo até conseguir mover todos os discos para a terceira torre.</li>
+        </ol>
+        <button class = "fechar-btn">Fechar</button>
     </div>
     <script src="script.js"></script>
 </body>
