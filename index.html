@@ -10,7 +10,7 @@
     <title>Tower of Hanoi</title>
 </head>
 <body>
-    <div class="victory-modal hidden">
+    <div class="victory-modal --hidden">
         <div class="before"></div>
         <div class="after"></div>
         <h1>Parabéns!</h1>
@@ -21,13 +21,23 @@
         <p class = "try-again">Tente novamente com uma quantidade maior de discos!</p>
         <p id="retry"><i class="fas fa-sync"></i>  Tentar Novamente</p>
     </div>
+    
     <div class="container">
-        <p>Tempo: <span class="timer">0</span> segundos</p>
-        <p>Movimentos: <span id="moves">0</span></p>
-        <button class="reset-btn">Reset</button>
-        <div class="top-space"></div>
-        <div class="towers">
+        <div class="columns">
+            <div class="range-disks">
+                <p>Escolha o número de discos:</p>
+                <label id="range-show">3</label>
+                <input type="range" name="Numero-discos" id="disks-quant" min="3" max="7" value="3">
+            </div>
+            <div class="estatisticas --hidden">
+                <p id="cronometro">Tempo: <span class="timer">0</span> segundos</p>
+                <p  id="contador">Movimentos: <span id="moves">0</span></p>
+                <button class="reset-btn">Reset</button>
+            </div>
         </div>
+        <div class="top-space"></div>
+        
+        <div class="towers"></div>
     </div>
     <script src="script.js"></script>
 </body>
