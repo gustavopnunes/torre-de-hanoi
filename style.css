@@ -64,9 +64,7 @@ p {
     min-height: 100px;
     
 }
-#disk-quant:{
 
-}
 .container {
     width: 90vw;
     height:max-content;
@@ -84,12 +82,7 @@ p {
     min-width: 100%;
 }
 
-#cronometro {
-    
-}
-#contador {
-    
-}
+
 .top-space {
     border: 1px solid transparent;
     width: 30%;
