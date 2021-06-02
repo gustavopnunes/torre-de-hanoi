@@ -42,6 +42,17 @@ p {
     text-align: center;
     margin: 0 auto;
 }
+.range-disks {
+    transform: rotate(270deg);
+    display: flex;
+    align-items: center;
+    max-width: 30%;
+    min-height: 100px;
+    
+}
+#disk-quant:{
+
+}
 .container {
     width: 90vw;
     height:max-content;
@@ -54,7 +65,18 @@ p {
     max-height: 400px;
     
 }
+.columns {
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+}
 
+#cronometro {
+    
+}
+#contador {
+    
+}
 .top-space {
     border: 1px solid transparent;
     width: 30%;
@@ -130,6 +152,7 @@ p {
 .disk3 {
     background-color: rgb(255, 130, 47);
     width: 60%;
+    
 }
 
 .disk4 {
