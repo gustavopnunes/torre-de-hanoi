@@ -20,7 +20,7 @@ const letBeEquals = () => {
 
 
 // ----Área de teste
-const diskColors = {0: 'aqua', 1: 'rgb(255, 130, 47)', 2: 'red', 3: 'yellow', 4: 'violet', 5: 'darkgreen', 6: 'saddlebrown'}
+const diskColors = {1: 'aqua', 2: 'rgb(255, 130, 47)', 3: 'red', 4: 'yellow', 5: 'violet', 6: 'darkgreen', 7: 'saddlebrown'}
 const getDisksInput = () => {
     return inputDisksQuant.value;
 }
@@ -128,7 +128,6 @@ const resetAll = () => {
     window.clearInterval(startingTimer);
     topSpaceFilled = false;
     itsStarting = true;
-    //inputDisksQuant.value = 3;
     letBeEquals();
     gameMaking();
     showModal.classList.add('--hidden');
@@ -141,6 +140,11 @@ retryOnModal.addEventListener('click', () => {
     resetAll();
 })
 inputDisksQuant.addEventListener('change', () => {
+    moveCount.textContent = 0;
+    topSpaceFilled = false;
+    itsStarting = true;
     letBeEquals();
     gameMaking();
+    window.clearInterval(startingTimer);
+    timer.textContent = 0;
 });
